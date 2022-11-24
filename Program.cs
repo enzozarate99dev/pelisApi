@@ -13,34 +13,34 @@ builder.Services.AddScoped<IRepositorio, RepositorioEnMemoria>(); //esto antes d
 
 var app = builder.Build();
 
-//var logger = app.Services.GetService(typeof(ILogger<Startup>)) as ILogger<Startup>;
+var logger = app.Services.GetService(typeof(ILogger<Startup>)) as ILogger<Startup>;
 
-// Configure the HTTP request pipeline.
-// app.Use(async (context, next) =>
-// {
-// using (var swapStream = new MemoryStream())
-// {
-//     var respuestaOriginal = context.Response.Body;
-//     context.Response.Body = swapStream;
+//Configure the HTTP request pipeline.
+app.Use(async (context, next) =>
+{
+using (var swapStream = new MemoryStream())
+{
+    var respuestaOriginal = context.Response.Body;
+    context.Response.Body = swapStream;
 
-//     await next.Invoke(); //para continuar la ejecucion del pipeline
+    await next.Invoke(); //para continuar la ejecucion del pipeline
 
-//     swapStream.Seek(0, SeekOrigin.Begin);
-//     string respuesta = new StreamReader(swapStream).ReadToEnd();
-//     swapStream.Seek(0, SeekOrigin.Begin);
+    swapStream.Seek(0, SeekOrigin.Begin);
+    string respuesta = new StreamReader(swapStream).ReadToEnd();
+    swapStream.Seek(0, SeekOrigin.Begin);
 
-//     await swapStream.CopyToAsync(respuestaOriginal);
-//     context.Response.Body = respuestaOriginal;
+    await swapStream.CopyToAsync(respuestaOriginal);
+    context.Response.Body = respuestaOriginal;
 
-  //  logger.LogInformation(respuesta);
-// }
-// });
+   logger.LogInformation(respuesta);
+}
+});
 
-// app.Map("/mapa1", app => {
-//     app.Run(async context => {
-//         await context.Response.WriteAsync("Interceptando el pipeline");
-//     });
-// });
+app.Map("/mapa1", app => {
+    app.Run(async context => {
+        await context.Response.WriteAsync("Interceptando el pipeline");
+    });
+});
 
 if (app.Environment.IsDevelopment())
 {
