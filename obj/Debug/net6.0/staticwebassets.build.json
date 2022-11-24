@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "7Krtta2EeE6traGbh82AMlPyqrDt8fb+zPLpKeS7Wlg=",
+  "Source": "pelisApi",
+  "BasePath": "_content/pelisApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
