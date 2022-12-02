@@ -1,46 +1,63 @@
-using pelisApi.Entidades.Repositorios;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
+using pelisApi;
+using pelisApi.ApiBehavior;
+using pelisApi.Filtros;
+using pelisApi.Utilidades;
 
 var builder = WebApplication.CreateBuilder(args);
 
+var configuration = builder.Configuration;
+
+
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(options =>
+{
+  options.Filters.Add(typeof(FiltroExcepciones));
+  options.Filters.Add(typeof(ParsearBadRequest));
+}).ConfigureApiBehaviorOptions(BehaviorBadRequest.Parsear);
+
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
 builder.Services.AddEndpointsApiExplorer();
+
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IRepositorio, RepositorioEnMemoria>(); //esto antes de .net6 se hacia en el archivo Startup
+builder.Services.AddResponseCaching();
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer();
+
+builder.Services.AddCors(options =>
+{
+  var frontendURL = configuration.GetValue<string>("frontend_url");
+  options.AddDefaultPolicy(builder =>
+  {
+    builder.WithOrigins(frontendURL).AllowAnyMethod().AllowAnyHeader()
+    .WithExposedHeaders(new string[] { "cantidadTotalRegistros"});
+  });
+});
+
+builder.Services.AddAutoMapper(typeof(Program));
+
+
+builder.Services.AddTransient<IAlmacenadorArchivos, AlmacenadorArchivosLocal>();
+
+builder.Services.AddHttpContextAccessor();
+
+builder.Services.AddDbContext<AplicationDbContext>(options => 
+options.UseSqlServer(builder.Configuration.GetConnectionString("defaultConnection")));
 
 var app = builder.Build();
 
-var logger = app.Services.GetService(typeof(ILogger<Startup>)) as ILogger<Startup>;
+	
+// Add services to the container.
+ 
 
-//Configure the HTTP request pipeline.
-app.Use(async (context, next) =>
-{
-using (var swapStream = new MemoryStream())
-{
-    var respuestaOriginal = context.Response.Body;
-    context.Response.Body = swapStream;
+var logger = app.Services.GetService(typeof(ILogger<Program>)) as ILogger<Program>;
+// Configure the HTTP request pipeline.
 
-    await next.Invoke(); //para continuar la ejecucion del pipeline
-
-    swapStream.Seek(0, SeekOrigin.Begin);
-    string respuesta = new StreamReader(swapStream).ReadToEnd();
-    swapStream.Seek(0, SeekOrigin.Begin);
-
-    await swapStream.CopyToAsync(respuestaOriginal);
-    context.Response.Body = respuestaOriginal;
-
-   logger.LogInformation(respuesta);
-}
-});
-
-app.Map("/mapa1", app => {
-    app.Run(async context => {
-        await context.Response.WriteAsync("Interceptando el pipeline");
-    });
-});
 
 if (app.Environment.IsDevelopment())
 {
@@ -49,6 +66,14 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseStaticFiles();
+
+app.UseCors();
+
+app.UseResponseCaching();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 

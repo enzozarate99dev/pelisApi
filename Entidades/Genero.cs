@@ -7,25 +7,14 @@ using pelisApi.Validaciones;
 
 namespace pelisApi.Entidades
 {
-    public class Genero : IValidatableObject
+    public class Genero 
     {
         public int Id { get; set; }
         [Required]
-        // [PrimeraLetraMayus]
+        [StringLength(maximumLength: 20)]
+        [PrimeraLetraMayus]
         public string Nombre { get; set; }
 
-        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
-        {
-            if (!string.IsNullOrEmpty(Nombre)) //verificar q nombre no es nulo
-            {
-                var primeraLetra = Nombre[0].ToString();
-
-                if (primeraLetra != primeraLetra.ToUpper())
-                {
-                    yield return new ValidationResult("La primera letra debe ser mayuscula",
-                    new string[] { nameof(Nombre) });
-                }
-            }
-        }
+       
     }
 }

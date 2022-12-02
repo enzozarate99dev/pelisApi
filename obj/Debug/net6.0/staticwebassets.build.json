@@ -1,11 +1,19 @@
 {
   "Version": 1,
-  "Hash": "7Krtta2EeE6traGbh82AMlPyqrDt8fb+zPLpKeS7Wlg=",
+  "Hash": "RNVcDVIbUb0elqcThGvB/yhoN6JFqoyA2sHnhz233dA=",
   "Source": "pelisApi",
   "BasePath": "_content/pelisApi",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "pelisApi\\wwwroot",
+      "Source": "pelisApi",
+      "ContentRoot": "D:\\proyectos .net\\pelisApi\\wwwroot\\",
+      "BasePath": "_content/pelisApi",
+      "Pattern": "**"
+    }
+  ],
   "Assets": []
 }
