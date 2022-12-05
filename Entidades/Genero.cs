@@ -14,6 +14,7 @@ namespace pelisApi.Entidades
         [StringLength(maximumLength: 20)]
         [PrimeraLetraMayus]
         public string Nombre { get; set; }
+        public List<PeliculasGeneros> PeliculasGeneros { get; set; }
 
        
     }

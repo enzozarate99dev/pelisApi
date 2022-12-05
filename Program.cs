@@ -1,5 +1,8 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using NetTopologySuite;
+using NetTopologySuite.Geometries;
 using pelisApi;
 using pelisApi.ApiBehavior;
 using pelisApi.Filtros;
@@ -41,13 +44,24 @@ builder.Services.AddCors(options =>
 
 builder.Services.AddAutoMapper(typeof(Program));
 
+builder.Services.AddSingleton(provider =>
+
+  new MapperConfiguration(config =>
+  {
+    var geometryFactory = provider.GetRequiredService<GeometryFactory>();
+    config.AddProfile(new AutomapperProfiles(geometryFactory));
+  }).CreateMapper());
+
 
 builder.Services.AddTransient<IAlmacenadorArchivos, AlmacenadorArchivosLocal>();
 
 builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddDbContext<AplicationDbContext>(options => 
-options.UseSqlServer(builder.Configuration.GetConnectionString("defaultConnection")));
+options.UseSqlServer(builder.Configuration.GetConnectionString("defaultConnection"),
+sqlServerOptions => sqlServerOptions.UseNetTopologySuite()));
+
+builder.Services.AddSingleton<GeometryFactory>(NtsGeometryServices.Instance.CreateGeometryFactory(srid: 4326)); //permite trabajar con distancias. el 4326 es para mediciones en la Tierra
 
 var app = builder.Build();
 

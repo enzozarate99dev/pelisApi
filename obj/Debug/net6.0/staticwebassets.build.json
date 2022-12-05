@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "RNVcDVIbUb0elqcThGvB/yhoN6JFqoyA2sHnhz233dA=",
+  "Hash": "ka0o+h1IXl6Q9USLIJbJK+CjiCem7WfM37V9sAONUeo=",
   "Source": "pelisApi",
   "BasePath": "_content/pelisApi",
   "Mode": "Default",
@@ -15,5 +15,40 @@
       "Pattern": "**"
     }
   ],
-  "Assets": []
+  "Assets": [
+    {
+      "Identity": "D:\\proyectos .net\\pelisApi\\wwwroot\\actores\\2ea7d2a4-90a4-4e0b-8d56-b8aea2a1ae42.jpg",
+      "SourceId": "pelisApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\proyectos .net\\pelisApi\\wwwroot\\",
+      "BasePath": "_content/pelisApi",
+      "RelativePath": "actores/2ea7d2a4-90a4-4e0b-8d56-b8aea2a1ae42.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\actores\\2ea7d2a4-90a4-4e0b-8d56-b8aea2a1ae42.jpg"
+    },
+    {
+      "Identity": "D:\\proyectos .net\\pelisApi\\wwwroot\\actores\\c017dc52-94ed-453e-b2c5-c53ed8badf90.jpg",
+      "SourceId": "pelisApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\proyectos .net\\pelisApi\\wwwroot\\",
+      "BasePath": "_content/pelisApi",
+      "RelativePath": "actores/c017dc52-94ed-453e-b2c5-c53ed8badf90.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\actores\\c017dc52-94ed-453e-b2c5-c53ed8badf90.jpg"
+    }
+  ]
 }

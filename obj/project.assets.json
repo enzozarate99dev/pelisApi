@@ -291,6 +291,27 @@
           }
         }
       },
+      "Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite/6.0.11": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.11",
+          "NetTopologySuite": "2.3.0",
+          "NetTopologySuite.IO.SqlServerBytes": "2.0.0"
+        },
+        "compile": {
+          "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "build/net6.0/Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite.targets": {}
+        }
+      },
       "Microsoft.EntityFrameworkCore.Tools/7.0.0": {
         "type": "package",
         "dependencies": {
@@ -736,6 +757,38 @@
         },
         "runtime": {
           "lib/netstandard2.0/Mono.TextTemplating.dll": {}
+        }
+      },
+      "NetTopologySuite/2.5.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Memory": "4.5.4"
+        },
+        "compile": {
+          "lib/netstandard2.0/NetTopologySuite.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/NetTopologySuite.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "NetTopologySuite.IO.SqlServerBytes/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "NetTopologySuite": "[2.0.0, 3.0.0-A)"
+        },
+        "compile": {
+          "lib/netstandard2.0/NetTopologySuite.IO.SqlServerBytes.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/NetTopologySuite.IO.SqlServerBytes.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Swashbuckle.AspNetCore/6.2.3": {
@@ -1651,6 +1704,21 @@
         "microsoft.entityframeworkcore.sqlserver.nuspec"
       ]
     },
+    "Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite/6.0.11": {
+      "sha512": "XyxCTfgl7la+8gfTMvaXQrNaK5hsDcSrOclZyBpN+LoSfTCTjL9lljCQ2GaiBCNpXdzL26p3OFvwQ949g0bIJQ==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.sqlserver.nettopologysuite/6.0.11",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "build/net6.0/Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite.targets",
+        "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite.dll",
+        "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite.xml",
+        "microsoft.entityframeworkcore.sqlserver.nettopologysuite.6.0.11.nupkg.sha512",
+        "microsoft.entityframeworkcore.sqlserver.nettopologysuite.nuspec"
+      ]
+    },
     "Microsoft.EntityFrameworkCore.Tools/7.0.0": {
       "sha512": "DtLJ0usm8NdPbRDxvNUBAYgnvqhodr/HPb461I+jrgHw5ZKF0vRTaokNth2Zy9xiw1ZTpT4c+S40f7AHWakODg==",
       "type": "package",
@@ -2351,6 +2419,33 @@
         "lib/netstandard2.0/Mono.TextTemplating.dll",
         "mono.texttemplating.2.2.1.nupkg.sha512",
         "mono.texttemplating.nuspec"
+      ]
+    },
+    "NetTopologySuite/2.5.0": {
+      "sha512": "5/+2O2ADomEdUn09mlSigACdqvAf0m/pVPGtIPEPQWnyrVykYY0NlfXLIdkMgi41kvH9kNrPqYaFBTZtHYH7Xw==",
+      "type": "package",
+      "path": "nettopologysuite/2.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/netstandard2.0/NetTopologySuite.dll",
+        "lib/netstandard2.0/NetTopologySuite.xml",
+        "nettopologysuite.2.5.0.nupkg.sha512",
+        "nettopologysuite.nuspec"
+      ]
+    },
+    "NetTopologySuite.IO.SqlServerBytes/2.0.0": {
+      "sha512": "TuyMB0VSlRJx86UrWeQ+SGgOMudvhIL1qJJdWJw78nWsXIzKRP4ooQAhhhCCH7n8q1lvd0/NW3ByaLlHxxNSPQ==",
+      "type": "package",
+      "path": "nettopologysuite.io.sqlserverbytes/2.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/NetTopologySuite.IO.SqlServerBytes.dll",
+        "lib/netstandard2.0/NetTopologySuite.IO.SqlServerBytes.xml",
+        "nettopologysuite.io.sqlserverbytes.2.0.0.nupkg.sha512",
+        "nettopologysuite.io.sqlserverbytes.nuspec"
       ]
     },
     "Swashbuckle.AspNetCore/6.2.3": {
@@ -3813,7 +3908,9 @@
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 6.0.0",
       "Microsoft.EntityFrameworkCore >= 7.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.0",
+      "Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite >= 6.0.11",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.0",
+      "NetTopologySuite >= 2.5.0",
       "Swashbuckle.AspNetCore >= 6.2.3"
     ]
   },
@@ -3823,11 +3920,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\proyectos .net\\pelisApi\\pelisApi.csproj",
+      "projectUniqueName": "d:\\proyectos .net\\pelisApi\\pelisApi.csproj",
       "projectName": "pelisApi",
-      "projectPath": "D:\\proyectos .net\\pelisApi\\pelisApi.csproj",
+      "projectPath": "d:\\proyectos .net\\pelisApi\\pelisApi.csproj",
       "packagesPath": "C:\\Users\\Liliana\\.nuget\\packages\\",
-      "outputPath": "D:\\proyectos .net\\pelisApi\\obj\\",
+      "outputPath": "d:\\proyectos .net\\pelisApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Liliana\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -3870,11 +3967,19 @@
             "target": "Package",
             "version": "[7.0.0, )"
           },
+          "Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite": {
+            "target": "Package",
+            "version": "[6.0.11, )"
+          },
           "Microsoft.EntityFrameworkCore.Tools": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
             "target": "Package",
             "version": "[7.0.0, )"
+          },
+          "NetTopologySuite": {
+            "target": "Package",
+            "version": "[2.5.0, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",

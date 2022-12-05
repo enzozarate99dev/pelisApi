@@ -12,7 +12,9 @@
           "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite": "6.0.11",
           "Microsoft.EntityFrameworkCore.Tools": "7.0.0",
+          "NetTopologySuite": "2.5.0",
           "Swashbuckle.AspNetCore": "6.2.3"
         },
         "runtime": {
@@ -228,6 +230,19 @@
           "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll": {
             "assemblyVersion": "7.0.0.0",
             "fileVersion": "7.0.22.51807"
+          }
+        }
+      },
+      "Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite/6.0.11": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.0",
+          "NetTopologySuite": "2.5.0",
+          "NetTopologySuite.IO.SqlServerBytes": "2.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite.dll": {
+            "assemblyVersion": "6.0.11.0",
+            "fileVersion": "6.0.1122.51302"
           }
         }
       },
@@ -491,6 +506,28 @@
           "lib/netstandard2.0/Mono.TextTemplating.dll": {
             "assemblyVersion": "2.2.0.0",
             "fileVersion": "2.2.1.1"
+          }
+        }
+      },
+      "NetTopologySuite/2.5.0": {
+        "dependencies": {
+          "System.Memory": "4.5.4"
+        },
+        "runtime": {
+          "lib/netstandard2.0/NetTopologySuite.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        }
+      },
+      "NetTopologySuite.IO.SqlServerBytes/2.0.0": {
+        "dependencies": {
+          "NetTopologySuite": "2.5.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/NetTopologySuite.IO.SqlServerBytes.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
           }
         }
       },
@@ -903,6 +940,13 @@
       "path": "microsoft.entityframeworkcore.sqlserver/7.0.0",
       "hashPath": "microsoft.entityframeworkcore.sqlserver.7.0.0.nupkg.sha512"
     },
+    "Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite/6.0.11": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XyxCTfgl7la+8gfTMvaXQrNaK5hsDcSrOclZyBpN+LoSfTCTjL9lljCQ2GaiBCNpXdzL26p3OFvwQ949g0bIJQ==",
+      "path": "microsoft.entityframeworkcore.sqlserver.nettopologysuite/6.0.11",
+      "hashPath": "microsoft.entityframeworkcore.sqlserver.nettopologysuite.6.0.11.nupkg.sha512"
+    },
     "Microsoft.EntityFrameworkCore.Tools/7.0.0": {
       "type": "package",
       "serviceable": true,
@@ -1091,6 +1135,20 @@
       "sha512": "sha512-KZYeKBET/2Z0gY1WlTAK7+RHTl7GSbtvTLDXEZZojUdAPqpQNDL6tHv7VUpqfX5VEOh+uRGKaZXkuD253nEOBQ==",
       "path": "mono.texttemplating/2.2.1",
       "hashPath": "mono.texttemplating.2.2.1.nupkg.sha512"
+    },
+    "NetTopologySuite/2.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5/+2O2ADomEdUn09mlSigACdqvAf0m/pVPGtIPEPQWnyrVykYY0NlfXLIdkMgi41kvH9kNrPqYaFBTZtHYH7Xw==",
+      "path": "nettopologysuite/2.5.0",
+      "hashPath": "nettopologysuite.2.5.0.nupkg.sha512"
+    },
+    "NetTopologySuite.IO.SqlServerBytes/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TuyMB0VSlRJx86UrWeQ+SGgOMudvhIL1qJJdWJw78nWsXIzKRP4ooQAhhhCCH7n8q1lvd0/NW3ByaLlHxxNSPQ==",
+      "path": "nettopologysuite.io.sqlserverbytes/2.0.0",
+      "hashPath": "nettopologysuite.io.sqlserverbytes.2.0.0.nupkg.sha512"
     },
     "Swashbuckle.AspNetCore/6.2.3": {
       "type": "package",

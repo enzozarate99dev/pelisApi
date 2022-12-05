@@ -84,3 +84,7 @@ D:\proyectos .net\pelisApi\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Syste
 D:\proyectos .net\pelisApi\bin\Debug\net6.0\AutoMapper.dll
 D:\proyectos .net\pelisApi\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 D:\proyectos .net\pelisApi\bin\Debug\net6.0\pelisApi.staticwebassets.runtime.json
+D:\proyectos .net\pelisApi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite.dll
+D:\proyectos .net\pelisApi\bin\Debug\net6.0\NetTopologySuite.dll
+D:\proyectos .net\pelisApi\bin\Debug\net6.0\NetTopologySuite.IO.SqlServerBytes.dll
+D:\proyectos .net\pelisApi\obj\Debug\net6.0\EFCoreSqlServerNetTopologySuite.cs

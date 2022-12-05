@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "qdx9mPEXH4plH5+XBrxX17FrU4H3Q188KdoWH0KniB5x/aQsAW2R1F+Axlbu87OV7B4Iqb4U7F6krLG1kN6u2w==",
+  "dgSpecHash": "Dz++k1pb2PpcHFqW1Up3BkVCQaR0+8tol3spJD+C0VOcvUUsbUBK13q9tYUpUs8VTLm4HEs23c/EgfV9kI/zYQ==",
   "success": true,
   "projectFilePath": "D:\\proyectos .net\\pelisApi\\pelisApi.csproj",
   "expectedPackageFiles": [
@@ -20,6 +20,7 @@
     "C:\\Users\\Liliana\\.nuget\\packages\\microsoft.entityframeworkcore.design\\7.0.0\\microsoft.entityframeworkcore.design.7.0.0.nupkg.sha512",
     "C:\\Users\\Liliana\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\7.0.0\\microsoft.entityframeworkcore.relational.7.0.0.nupkg.sha512",
     "C:\\Users\\Liliana\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\7.0.0\\microsoft.entityframeworkcore.sqlserver.7.0.0.nupkg.sha512",
+    "C:\\Users\\Liliana\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver.nettopologysuite\\6.0.11\\microsoft.entityframeworkcore.sqlserver.nettopologysuite.6.0.11.nupkg.sha512",
     "C:\\Users\\Liliana\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\7.0.0\\microsoft.entityframeworkcore.tools.7.0.0.nupkg.sha512",
     "C:\\Users\\Liliana\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\Liliana\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\7.0.0\\microsoft.extensions.caching.abstractions.7.0.0.nupkg.sha512",
@@ -47,6 +48,8 @@
     "C:\\Users\\Liliana\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\Liliana\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
     "C:\\Users\\Liliana\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\Liliana\\.nuget\\packages\\nettopologysuite\\2.5.0\\nettopologysuite.2.5.0.nupkg.sha512",
+    "C:\\Users\\Liliana\\.nuget\\packages\\nettopologysuite.io.sqlserverbytes\\2.0.0\\nettopologysuite.io.sqlserverbytes.2.0.0.nupkg.sha512",
     "C:\\Users\\Liliana\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
     "C:\\Users\\Liliana\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
     "C:\\Users\\Liliana\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
