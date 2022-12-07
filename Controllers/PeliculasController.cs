@@ -162,6 +162,13 @@ namespace pelisApi.Controllers
             return mapper.Map<List<PeliculaDTO>>(peliculas);
         }
 
+        [HttpGet("todos")]
+        public async Task<ActionResult<List<GeneroDTO>>> Get([FromQuery] PaginacionDTO paginacionDTO)
+        {
+            var generos = await context.Generos.ToListAsync();
+            return mapper.Map<List<GeneroDTO>>(generos);
+        }  
+
         [HttpPut("{id:int}")]
         public async Task<ActionResult> Put(int id,[FromForm] PeliculaCreacionDTO peliculaCreacionDTO)
         {
