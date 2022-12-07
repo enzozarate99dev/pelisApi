@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\proyectos .net\\pelisApi\\pelisApi.csproj": {}
+    "d:\\proyectos .net\\pelisApi\\pelisApi.csproj": {}
   },
   "projects": {
-    "D:\\proyectos .net\\pelisApi\\pelisApi.csproj": {
+    "d:\\proyectos .net\\pelisApi\\pelisApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\proyectos .net\\pelisApi\\pelisApi.csproj",
+        "projectUniqueName": "d:\\proyectos .net\\pelisApi\\pelisApi.csproj",
         "projectName": "pelisApi",
-        "projectPath": "D:\\proyectos .net\\pelisApi\\pelisApi.csproj",
+        "projectPath": "d:\\proyectos .net\\pelisApi\\pelisApi.csproj",
         "packagesPath": "C:\\Users\\Liliana\\.nuget\\packages\\",
-        "outputPath": "D:\\proyectos .net\\pelisApi\\obj\\",
+        "outputPath": "d:\\proyectos .net\\pelisApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Liliana\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -45,6 +45,10 @@
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[6.0.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.0, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
