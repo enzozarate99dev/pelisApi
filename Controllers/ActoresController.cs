@@ -33,45 +33,56 @@ namespace pelisApi.Controllers
         [HttpGet] //  api/actores
         public async Task<ActionResult<List<ActorDTO>>> Get([FromQuery] PaginacionDTO paginacionDTO)
         {
-            var queryable =  context.Actores.AsQueryable();
+            var queryable = context.Actores.AsQueryable();
             await HttpContext.InsertarParamterosPaginacionCabecera(queryable);
             var actores = await queryable.OrderBy(x => x.Nombre).Paginar(paginacionDTO).ToListAsync();
             return mapper.Map<List<ActorDTO>>(queryable);
         }
 
-         [HttpGet("{Id:int}")]
+        [HttpGet("{Id:int}")]
         public async Task<ActionResult<ActorDTO>> Get(int Id)
         {
 
-            var actor = await context.Actores.FirstOrDefaultAsync(x => x.Id == Id );
+            var actor = await context.Actores.FirstOrDefaultAsync(x => x.Id == Id);
             if (actor == null)
             {
                 return NotFound();
             }
             return mapper.Map<ActorDTO>(actor);
         }
-
+        
+        [HttpGet("buscarPorNombre/{nombre}")]
+        public async Task<ActionResult<List<PeliculaActorDTO>>> BuscarPorNombre(string nombre = "")
+        {
+            if (string.IsNullOrWhiteSpace(nombre)) { return new List<PeliculaActorDTO>(); }
+            return await context.Actores
+                .Where(x => x.Nombre.Contains(nombre))
+                .OrderBy(x => x.Nombre)
+                .Select(x => new PeliculaActorDTO { Id = x.Id, Nombre = x.Nombre, Foto = x.Foto })
+                .Take(5)
+                .ToListAsync();
+        }
 
         [HttpPost]
         public async Task<ActionResult> Post([FromForm] ActorCreacionDTO actorCreacionDTO)
         {
             var actor = mapper.Map<Actor>(actorCreacionDTO);
-            
-            if(actorCreacionDTO.Foto != null)
+
+            if (actorCreacionDTO.Foto != null)
             {
-               actor.Foto = await almacenadorArchivos.GuardarArchivo(contenedor, actorCreacionDTO.Foto);
+                actor.Foto = await almacenadorArchivos.GuardarArchivo(contenedor, actorCreacionDTO.Foto);
             }
-            
+
             context.Add(actor);
             await context.SaveChangesAsync();
             return NoContent();
         }
 
         [HttpPut("{id:int}")]
-        public async Task<ActionResult> Put(int id,[FromForm] ActorCreacionDTO actorCreacionDTO)
+        public async Task<ActionResult> Put(int id, [FromForm] ActorCreacionDTO actorCreacionDTO)
         {
             var actor = await context.Actores.FirstOrDefaultAsync(x => x.Id == id);
-            if(actor == null)
+            if (actor == null)
             {
                 return NotFound();
 
@@ -85,11 +96,11 @@ namespace pelisApi.Controllers
             }
             await context.SaveChangesAsync();
             return NoContent();
-            
+
         }
 
         [HttpDelete("{id:int}")]
-        public async Task<ActionResult> Delete (int id)
+        public async Task<ActionResult> Delete(int id)
         {
             var actor = await context.Actores.FirstOrDefaultAsync(x => x.Id == id);
 

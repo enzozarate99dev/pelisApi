@@ -88,3 +88,4 @@ D:\proyectos .net\pelisApi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlSer
 D:\proyectos .net\pelisApi\bin\Debug\net6.0\NetTopologySuite.dll
 D:\proyectos .net\pelisApi\bin\Debug\net6.0\NetTopologySuite.IO.SqlServerBytes.dll
 D:\proyectos .net\pelisApi\obj\Debug\net6.0\EFCoreSqlServerNetTopologySuite.cs
+D:\proyectos .net\pelisApi\bin\Debug\net6.0\Newtonsoft.Json.dll
