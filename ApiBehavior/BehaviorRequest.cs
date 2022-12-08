@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace pelisApi.ApiBehavior
 {
-    public class BehaviorBadRequest
+    public static class BehaviorBadRequest
     {
         public static void Parsear(ApiBehaviorOptions options)
         {

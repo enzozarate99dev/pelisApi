@@ -11,8 +11,8 @@ using pelisApi.Utilidades;
 
 namespace pelisApi.Controllers
 {
-    [Route("api/peliculas")]
     [ApiController]
+    [Route("api/peliculas")]
     public class PeliculasController : ControllerBase
     {
         private readonly IAlmacenadorArchivos almacenadorArchivos;
@@ -71,7 +71,7 @@ namespace pelisApi.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<int>> Post([FromForm] PeliculaCreacionDTO peliculaCreacionDTO)
+        public async Task<ActionResult> Post([FromForm] PeliculaCreacionDTO peliculaCreacionDTO)
         {
             var pelicula = mapper.Map<Pelicula>(peliculaCreacionDTO);
 
@@ -84,7 +84,7 @@ namespace pelisApi.Controllers
 
             context.Add(pelicula);
             await context.SaveChangesAsync();
-            return pelicula.Id;
+            return NoContent();
         }
 
         [HttpGet("PostGet")]

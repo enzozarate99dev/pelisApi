@@ -25,7 +25,8 @@ namespace pelisApi.Filtros
                 {
                     respuesta.Add(resultadoActual.Value.ToString());
                 }
-                else{
+                else
+                {
                     foreach (var llave in context.ModelState.Keys)
                     {
                         foreach (var error in context.ModelState[llave].Errors)
