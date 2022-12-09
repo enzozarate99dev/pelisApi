@@ -13,8 +13,8 @@ using pelisApi.Utilidades;
 
 namespace pelisApi.Controllers
 {
-    [Route("api/cines")]
     [ApiController]
+    [Route("api/cines")]
     public class CinesController : ControllerBase
     {
         private readonly AplicationDbContext context;
@@ -56,9 +56,9 @@ namespace pelisApi.Controllers
             return NoContent();
         }
         [HttpPut("{id:int}")]
-        public async Task<ActionResult> Put(int id,[FromBody] CineCreacionDTO cineCreacionDTO)
+        public async Task<ActionResult> Put(int Id,[FromBody] CineCreacionDTO cineCreacionDTO)
         {
-            var cine = await context.Generos.FirstOrDefaultAsync(x => x.Id == id);
+            var cine = await context.Cines.FirstOrDefaultAsync(x => x.Id == Id);
             if(cine == null)
             {
                 return NotFound();
@@ -79,7 +79,7 @@ namespace pelisApi.Controllers
 
             context.Remove(new Cine() {Id = id});
             await context.SaveChangesAsync();
-            return NotFound();
+            return NoContent();
         }
     }
 }
