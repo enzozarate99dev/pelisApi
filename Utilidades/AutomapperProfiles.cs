@@ -15,13 +15,14 @@ namespace pelisApi.Utilidades
         {
             CreateMap<Genero, GeneroDTO>().ReverseMap();
             CreateMap<GeneroCreacionDTO, Genero>();
+
             CreateMap<Actor, ActorDTO>().ReverseMap();
             CreateMap<ActorCreacionDTO, Actor>()
             .ForMember(x => x.Foto, options => options.Ignore()); //ignorar foto
 
             CreateMap<CineCreacionDTO, Cine>()
             .ForMember(x => x.Ubicacion, x => x.MapFrom(dto =>
-            geometryFactory.CreatePoint(new Coordinate(dto.Latitud, dto.Longitud))));
+            geometryFactory.CreatePoint(new Coordinate(dto.Longitud, dto.Latitud))));
 
             CreateMap<Cine, CineDTO>()
             .ForMember(x => x.Latitud, dto => dto.MapFrom(campo => campo.Ubicacion.Y))

@@ -39,7 +39,7 @@ namespace pelisApi.Controllers
             return mapper.Map<List<ActorDTO>>(queryable);
         }
 
-        [HttpGet("{Id:int}")]
+        [HttpGet("{id:int}")]
         public async Task<ActionResult<ActorDTO>> Get(int Id)
         {
 
@@ -111,7 +111,7 @@ namespace pelisApi.Controllers
             context.Remove(actor);
             await context.SaveChangesAsync();
             await almacenadorArchivos.BorrarArchivo(actor.Foto, contenedor);
-            return NotFound();
+            return NoContent();
         }
     }
 

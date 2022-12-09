@@ -21,12 +21,14 @@ namespace pelisApi.DTOs
         public bool EnCines {get; set; }
 
         public DateTime FechaLanzamiento {get; set; }
-
         public IFormFile Poster {get; set; }
+
         [ModelBinder(BinderType = typeof(TypeBinder<List<int>>))]
         public List<int> GenerosIds { get; set; }
+
         [ModelBinder(BinderType = typeof(TypeBinder<List<int>>))]
         public List<int> CinesIds { get; set; }
+        
         [ModelBinder(BinderType = typeof(TypeBinder<List<ActorPeliculaCreacionDTO>>))]
         public List<ActorPeliculaCreacionDTO> Actores { get; set; }
     }

@@ -1,6 +1,10 @@
+using System.Text;
 using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
 using NetTopologySuite;
 using NetTopologySuite.Geometries;
 using pelisApi;
@@ -30,7 +34,22 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddResponseCaching();
 
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer();
+builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+  .AddEntityFrameworkStores<AplicationDbContext>()
+  .AddDefaultTokenProviders();
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+  .AddJwtBearer(opciones => 
+  opciones.TokenValidationParameters = new TokenValidationParameters {
+    ValidateIssuer = false,
+    ValidateAudience = false,
+    ValidateLifetime = true, //tiempo de vida limatada del token
+    ValidateIssuerSigningKey = true,
+    IssuerSigningKey = new SymmetricSecurityKey(
+      Encoding.UTF8.GetBytes(configuration["llavejwt"])
+    ), 
+    ClockSkew = TimeSpan.Zero
+  });
 
 builder.Services.AddCors(options =>
 {

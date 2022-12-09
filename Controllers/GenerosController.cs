@@ -51,6 +51,14 @@ namespace pelisApi.Controllers
             }
             return mapper.Map<GeneroDTO>(genero);
         }
+
+          [HttpGet("todos")]
+        public async Task<ActionResult<List<GeneroDTO>>> Todos()
+        {
+            var generos = await context.Generos.OrderBy(x => x.Nombre).ToListAsync();
+            return mapper.Map<List<GeneroDTO>>(generos);
+        }
+
         [HttpPost]
         public async Task<ActionResult> Post([FromBody] GeneroCreacionDTO generoCreacionDTO)
         {
@@ -83,7 +91,7 @@ namespace pelisApi.Controllers
 
             context.Remove(new Genero() {Id = id});
             await context.SaveChangesAsync();
-            return NotFound();
+            return NoContent();
         }
     }
 }

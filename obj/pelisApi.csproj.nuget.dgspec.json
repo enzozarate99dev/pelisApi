@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\proyectos .net\\pelisApi\\pelisApi.csproj": {}
+    "D:\\proyectos .net\\pelisApi\\pelisApi.csproj": {}
   },
   "projects": {
-    "d:\\proyectos .net\\pelisApi\\pelisApi.csproj": {
+    "D:\\proyectos .net\\pelisApi\\pelisApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\proyectos .net\\pelisApi\\pelisApi.csproj",
+        "projectUniqueName": "D:\\proyectos .net\\pelisApi\\pelisApi.csproj",
         "projectName": "pelisApi",
-        "projectPath": "d:\\proyectos .net\\pelisApi\\pelisApi.csproj",
+        "projectPath": "D:\\proyectos .net\\pelisApi\\pelisApi.csproj",
         "packagesPath": "C:\\Users\\Liliana\\.nuget\\packages\\",
-        "outputPath": "d:\\proyectos .net\\pelisApi\\obj\\",
+        "outputPath": "D:\\proyectos .net\\pelisApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Liliana\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -48,7 +48,7 @@
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[7.0.0, )"
+              "version": "[5.0.5, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
