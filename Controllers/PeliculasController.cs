@@ -71,7 +71,7 @@ namespace pelisApi.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Post([FromForm] PeliculaCreacionDTO peliculaCreacionDTO)
+        public async Task<ActionResult<int>> Post([FromForm] PeliculaCreacionDTO peliculaCreacionDTO)
         {
             var pelicula = mapper.Map<Pelicula>(peliculaCreacionDTO);
 
@@ -84,7 +84,7 @@ namespace pelisApi.Controllers
 
             context.Add(pelicula);
             await context.SaveChangesAsync();
-            return NoContent();
+            return pelicula.Id;
         }
 
         [HttpGet("PostGet")]
@@ -165,7 +165,7 @@ namespace pelisApi.Controllers
        
 
         [HttpPut("{id:int}")]
-        public async Task<ActionResult> Put(int id,[FromForm] PeliculaCreacionDTO peliculaCreacionDTO)
+        public async Task<ActionResult> Put(int id, [FromForm] PeliculaCreacionDTO peliculaCreacionDTO)
         {
            var pelicula = await context.Peliculas
                 .Include(x => x.PeliculasActores)

@@ -30,6 +30,6 @@ namespace pelisApi.DTOs
         public List<int> CinesIds { get; set; }
         
         [ModelBinder(BinderType = typeof(TypeBinder<List<ActorPeliculaCreacionDTO>>))]
-        public List<ActorPeliculaCreacionDTO> Actores { get; set; }
+        public List<ActorPeliculaCreacionDTO> Actores { get; set; } 
     }
 }
