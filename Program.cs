@@ -1,3 +1,4 @@
+using System.IdentityModel.Tokens.Jwt;
 using System.Text;
 using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -16,6 +17,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 var configuration = builder.Configuration;
 
+JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
 
 // Add services to the container.
 
@@ -50,6 +52,11 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     ), 
     ClockSkew = TimeSpan.Zero
   });
+
+//politica de autorizacion para el usuario Administrador
+builder.Services.AddAuthorization(opciones => {
+  opciones.AddPolicy("EsAdmin", policy => policy.RequireClaim("role", "admin"));
+});
 
 builder.Services.AddCors(options =>
 {

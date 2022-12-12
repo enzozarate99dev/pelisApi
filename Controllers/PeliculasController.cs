@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using pelisApi.DTOs;
@@ -13,6 +15,8 @@ namespace pelisApi.Controllers
 {
     [ApiController]
     [Route("api/peliculas")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Policy = "EsAdmin")]
+
     public class PeliculasController : ControllerBase
     {
         private readonly IAlmacenadorArchivos almacenadorArchivos;
@@ -30,6 +34,7 @@ namespace pelisApi.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public async Task<ActionResult<LandingPageDTO>> Get()
         {
             var top = 6;
@@ -54,6 +59,7 @@ namespace pelisApi.Controllers
         }
 
         [HttpGet("{id:int}")]
+        [AllowAnonymous]
         public async Task<ActionResult<PeliculaDTO>> Get(int id)
         {
             var pelicula = await context.Peliculas
@@ -132,6 +138,7 @@ namespace pelisApi.Controllers
         }
 
         [HttpGet("filtrar")]
+        [AllowAnonymous]
         public async Task<ActionResult<List<PeliculaDTO>>> Filtrar([FromQuery] PeliculasFiltrarDTO peliculasFiltrarDTO)
         {
             var peliculasQueryable = context.Peliculas.AsQueryable();

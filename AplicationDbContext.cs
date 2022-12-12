@@ -33,6 +33,7 @@ namespace pelisApi
         public DbSet<PeliculasGeneros> PeliculasGeneros { get; set; }
 
         public DbSet<PeliculasCines> PeliculasCines { get; set; }
+        public DbSet<Rating> Ratings { get; set; }
 
 
 

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
@@ -24,6 +25,16 @@ namespace pelisApi.Filtros
                 if (resultadoActual.Value is string)
                 {
                     respuesta.Add(resultadoActual.Value.ToString());
+                }
+
+            //si resuldatoActual es del tipo IEnum guardar en la variable errores
+                else if (resultadoActual.Value is IEnumerable<IdentityError> errores)
+                {
+                    foreach (var error in errores)
+                    {
+                        respuesta.Add(error.Description);
+                        //descripcion: faltaron caracteceres alfanum, mayusculas, numeros
+                    }
                 }
                 else
                 {

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5MG4j6YwvXfjMizrV1hQ4KdaYo9JvNUMdYau5bCdeK4=",
+  "Hash": "gjFyOecW96UXja2yfr9HZn3Ak9qeTKMezTcXwhFmiK4=",
   "Source": "pelisApi",
   "BasePath": "_content/pelisApi",
   "Mode": "Default",
@@ -49,40 +49,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\actores\\c017dc52-94ed-453e-b2c5-c53ed8badf90.jpg"
-    },
-    {
-      "Identity": "D:\\proyectos .net\\pelisApi\\wwwroot\\peliculas\\4429013b-2ea5-4064-ae2e-01ebd521925b.png",
-      "SourceId": "pelisApi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\proyectos .net\\pelisApi\\wwwroot\\",
-      "BasePath": "_content/pelisApi",
-      "RelativePath": "peliculas/4429013b-2ea5-4064-ae2e-01ebd521925b.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\peliculas\\4429013b-2ea5-4064-ae2e-01ebd521925b.png"
-    },
-    {
-      "Identity": "D:\\proyectos .net\\pelisApi\\wwwroot\\peliculas\\67c936e9-b6d8-4095-9ad2-533cbf16e38c.jpg",
-      "SourceId": "pelisApi",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\proyectos .net\\pelisApi\\wwwroot\\",
-      "BasePath": "_content/pelisApi",
-      "RelativePath": "peliculas/67c936e9-b6d8-4095-9ad2-533cbf16e38c.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\peliculas\\67c936e9-b6d8-4095-9ad2-533cbf16e38c.jpg"
     },
     {
       "Identity": "D:\\proyectos .net\\pelisApi\\wwwroot\\peliculas\\b1e5be58-3cb2-481d-a39a-99b3e6768d06.jpg",
